@@ -268,8 +268,8 @@
     &kp ESC   &kp N1    &kp N2      &kp N3   &kp N4     &kp N5                            &kp N6    &kp N7    &kp N8      &kp N9    &kp N0          &kp MINUS
     &kp TAB   &kp Q     &kp W       &kp E    &kp R      &kp T                             &kp Y     &kp U     &kp I       &kp O     &kp P           &kp LBKT
     &kp LCTRL &kp A     &kp S       &kp D    &kp F      &kp G                             &kp H     &kp J     &kp K       &kp L     &kp SEMI        &kp SQT
-    &kp LCMD  &kp Z     &kp X       &kp C    &kp V      &kp B       &trans    &kp BSPC   &kp N     &kp M     &kp COMMA   &kp DOT   &kp UP          &kp DOWN
-                        &kp LALT    &kp LCMD &mo 1      &kp LSHFT   &kp ENTER &kp SPACE  &mo 2     &kp RET   &kp LEFT  &kp RIGHT
+    &kp LCMD  &kp Z     &kp X       &kp C    &kp V      &kp B       &trans    &trans      &kp N     &kp M     &kp COMMA   &kp DOT   &kp UP          &kp DOWN
+                        &kp LALT    &trans   &mo 1      &kp LSHFT   &kp ENTER &kp SPACE   &mo 2     &kp RET   &kp LEFT  &kp RIGHT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -283,11 +283,11 @@
 // |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
 //                        |         |        |             |        |  |       |            | HOME  |  END             |
 			bindings = <
-&trans      &trans     &trans          &CST_HASH  &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8          &kp F9           &kp F10          &macro_cro_close
-&bt BT_NXT  &CST_AT    &trans          &trans     &shift_f6       &trans                                   &trans      &trans           &alt_cmd_i      &alt_cmd_l       &kp SLASH        &kp EQUAL
-&trans      &trans     &trans          &trans     &ctrl_shift_f   &cmd_ctrl_g                              &trans      &trans           &trans          &macro_pipe      &alt_cmd_m       &kp RBKT
-&trans      &trans     &alt_cmd_m      &alt_cmd_c &alt_cmd_v      &alt_cmd_f       &trans        &kp DEL   &cmd_n      &trans           &trans          &macro_backslash &shift_alt_up    &shift_alt_down
-                       &rgb_ug RGB_TOG &trans     &bt BT_CLR      &trans           &trans        &trans    &trans      &kp HOME         &kp END         &trans
+&trans               &trans     &trans          &CST_HASH  &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8          &kp F9           &kp F10          &macro_cro_close
+&bt BT_NXT           &CST_AT    &trans          &trans     &shift_f6       &trans                                  &trans      &trans           &alt_cmd_i      &alt_cmd_l       &kp SLASH        &kp EQUAL
+&trans               &trans     &trans          &trans     &ctrl_shift_f   &cmd_ctrl_g                             &trans      &trans           &trans          &macro_pipe      &alt_cmd_m       &kp RBKT
+&rgb_ug RGB_TOG      &trans     &alt_cmd_m      &alt_cmd_c &alt_cmd_v      &alt_cmd_f       &trans        &kp DEL  &cmd_n      &trans           &trans          &macro_backslash &shift_alt_up    &shift_alt_down
+                                &bt BT_CLR      &trans      &trans         &trans           &trans        &trans   & trans     &kp HOME         &kp END         &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -305,7 +305,7 @@
         &macro_gt  &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans          &trans
         &trans     &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans          &trans
         &trans     &trans     &trans     &trans   &trans          &trans    &trans         &macro_lt  &trans      &trans           &trans          &trans    &trans          &trans
-                              &trans     &trans   &trans          &trans    &trans         &bt BT_NXT &trans      &bt BT_CLR       &trans          &trans
+                              &trans     &trans   &trans          &trans    &trans         &trans     &trans      &trans           &trans          &trans
                     >;
 
                     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
