@@ -302,10 +302,10 @@
         //                     |      |      |       |        |  |       |      |       |       |
                     bindings = <
         &trans     &kp F1     &kp F2     &kp F3   &kp F4          &kp F5                              &trans      &trans           &trans          &trans    &trans          &trans
-        &macro_gt  &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans           &trans
-        &trans     &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans           &trans
-        &trans     &trans     &trans     &trans   &trans          &trans    &trans         &macro_lt  &trans      &trans           &trans          &trans    &trans           &trans
-                              &trans     &trans   &trans          &trans    &trans         &bt BT_NXT &trans      &bt BT_CLR       &trans.         &trans
+        &macro_gt  &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans          &trans
+        &trans     &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans          &trans
+        &trans     &trans     &trans     &trans   &trans          &trans    &trans         &macro_lt  &trans      &trans           &trans          &trans    &trans          &trans
+                              &trans     &trans   &trans          &trans    &trans         &bt BT_NXT &trans      &bt BT_CLR       &trans          &trans
                     >;
 
                     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
