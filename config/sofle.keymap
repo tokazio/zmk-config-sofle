@@ -301,11 +301,11 @@
         // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
         //                     |      |      |       |        |  |       |      |       |       |
                     bindings = <
-        &trans     &kp F1     &kp F2     &kp F3   &kp F4          &kp F5                              &trans      &trans           &trans          &trans    &trans          &trans
-        &macro_gt  &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans          &trans
-        &trans     &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans          &trans
-        &trans     &trans     &trans     &trans   &trans          &trans    &trans         &macro_lt  &trans      &trans           &trans          &trans    &trans          &trans
-                              &trans     &trans   &trans          &trans    &trans         &trans     &trans      &trans           &trans          &trans
+        &trans                 &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                     &trans      &trans           &trans          &trans    &trans          &trans
+        &macro_gt              &trans          &trans          &trans          &trans          &trans                                     &trans      &trans           &trans          &trans    &trans          &trans
+        &trans                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &trans      &trans           &trans          &trans    &trans          &trans
+        &trans                 &trans          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &trans    &trans     &macro_lt   &trans           &trans          &trans    &trans          &trans
+                               &trans          &trans          &trans          &trans          &trans                &trans    &trans     &trans      &trans           &trans          &trans
                     >;
 
                     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
