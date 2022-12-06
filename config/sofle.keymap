@@ -11,25 +11,305 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
 
-        default_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |     |  F1  |  F2  |  F3   |  F4   |  F5  |                |  F6  |  F7  |  F8   |  F9  |  F10  |  F11  |
-// |     | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                | PGUP |  END |   ^   | HOME |  INS  |  F12  |
-// |     | RGBT | RGB- | RGB+  |  BR-  |  BR+ |                | PGDN |   <- |   v   | ->   |  DEL  | C/CAPS|
-// |     |BTCLR | HUD  | HUI   |  SAD  |  SAI |      |  |      | SCRL | PRVS | PLAY  | NEXT |  PSCR |       |
-//              |      |       |       |      |      |  |      |      |      |       |      |
-            bindings = <
-&trans &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                         &kp F6             &kp F7     &kp F8   &kp F9     &kp F10   &kp F11
-&trans &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                   &kp PG_UP          &kp END    &kp UP   &kp HOME   &kp INS   &kp F12
-&trans &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                &kp PG_DN          &kp LEFT   &kp DOWN &kp RIGHT  &kp DEL   &mt RCTRL CLCK
-&trans &bt BT_CLR      &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &trans  &trans &kp SLCK           &kp C_PREV &kp C_PP &kp C_NEXT &kp PSCRN &trans
-                       &trans          &trans          &trans          &trans          &trans  &trans &ext_power EP_TOG  &trans     &trans   &trans
-            >;
+    chosen {
+      zmk,battery = &vbatt;
+    };
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+        label = "VBATT";
+    };
+    
+
+    
+    macros {
+
+        ctrl_shift_f: ctrl_shift_f {
+            label = "IJ find in files";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTRL>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp F &kp LSHFT &kp LCTRL>
+                ;
+        };
+
+        cmd_n: cmd_n {
+            label = "IJ open class";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp N>
+                , <&macro_release &kp LCMD &kp N>
+                ;
+        };
+
+        shift_alt_up: shift_alt_up {
+            label = "IJ move up";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LALT>
+                , <&macro_tap &kp UP>
+                , <&macro_release &kp LSHFT &kp LALT>
+                ;
+        };
+
+        shift_alt_down: shift_alt_down {
+            label = "IJ move down";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LALT>
+                , <&macro_tap &kp DOWN>
+                , <&macro_release &kp LSHFT &kp LALT>
+                ;
+        };
+
+        shift_f6: shift_f6 {
+            label = "IJ rename";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp F6>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        alt_cmd_m: alt_cmd_m {
+            label = "IJ extract method";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LALT>
+                , <&macro_tap &kp M>
+                , <&macro_release &kp LCMD &kp LALT>
+                ;
+        };
+	
+	alt_cmd_l: alt_cmd_l {
+            label = "IJ reformat code";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LALT>
+                , <&macro_tap &kp L>
+                , <&macro_release &kp LCMD &kp LALT>
+                ;
+        };
+
+        alt_cmd_v: alt_cmd_v {
+            label = "IJ extract variable";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LALT>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCMD &kp LALT>
+                ;
+        };
+
+        alt_cmd_f: alt_cmd_f {
+            label = "IJ extract field";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LALT>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LCMD &kp LALT>
+                ;
+        };
+
+        alt_cmd_c: alt_cmd_c {
+            label = "IJ extract const";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LALT>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCMD &kp LALT>
+                ;
+        };
+	
+	alt_cmd_i: alt_cmd_i {
+            label = "Chrome dev tools";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LALT>
+                , <&macro_tap &kp I>
+                , <&macro_release &kp LCMD &kp LALT>
+                ;
+        };
+	
+	cmd_ctrl_g: cmd_ctrl_g {
+            label = "IJ multi caret";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD &kp LCTRL>
+                , <&macro_tap &kp G>
+                , <&macro_release &kp LCMD &kp LCTRL>
+                ;
+        };
+
+        macro_gt: macro_gt {
+            label = "macro_gt";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp LSHIFT>
+                ;
+        };
+
+        macro_lt: macro_lt {
+            label = "macro_lt";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp GRAVE>
+                ;
+        };
+
+         macro_backslash: macro_backslash {
+            label = "macro_backslash";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RSHIFT &kp RALT>
+                , <&macro_tap &kp PERIOD>
+                , <&macro_release &kp RSHIFT &kp RALT>
+                ;
+        };
+
+        macro_pipe: macro_pipe {
+                    label = "macro_pipe";
+                    compatible = "zmk,behavior-macro";
+                    #binding-cells = <0>;
+                    bindings
+                        = <&macro_press &kp RSHIFT &kp RALT>
+                        , <&macro_tap &kp L>
+                        , <&macro_release &kp RSHIFT &kp RALT>
+                        ;
+                };
+
+        macro_cro_open: macro_cro_open {
+            label = "macro_cro_open";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RSHIFT &kp RALT>
+                , <&macro_tap &kp N5>
+                , <&macro_release &kp RSHIFT &kp RALT>
+                ;
+        };
+
+        macro_cro_close: macro_cro_close {
+            label = "macro_cro_close";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RSHIFT &kp RALT>
+                , <&macro_tap &kp MINUS>
+                , <&macro_release &kp RSHIFT &kp RALT>
+                ;
+        };
+
+        CST_AT: CST_AT {
+            label = "CST_AT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp NON_US_BACKSLASH>
+                ;
+        };
+
+        CST_HASH: CST_HASH {
+            label = "CST_HASH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp NON_US_BACKSLASH>
+                , <&macro_release &kp LSHIFT>
+                ;
         };
     };
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC  |  1 ou &  | 2 ou é  | 3 ou "   | 4 ou '   | 5 ou (   |                   | 6 ou §   | 7 ou é    | 8 ou !    | 9 ou ç   |  0 ou à   |   ) ou °  |
+// |  TAB  |  Q       |  W      |  E       |  R       |  T       |                   |  Y       |  U        |  I        |  O       |   P       |   ^ ou ¨  |
+// |  CTRL |  A       |  S      |  D       |  F       |  G       |                   |  H       |  J        |  K        |  L       |   M       |   ù ou %  |
+// |  CMD  |  Z       |  X      |  C       |  V       |  B       |  ENTER |  | BCSPC |  N       | , ou ?    |  ; ou .   | : ou /   |  UP       | DOWN      |
+//                              | ALT      | CMD      | LOWER    |  SHIFT |  | SPACE | RAISE    | LEFT      | RIGHT     |
+			bindings = <
+    &kp ESC   &kp N1    &kp N2      &kp N3   &kp N4     &kp N5                            &kp N6    &kp N7    &kp N8      &kp N9    &kp N0          &kp MINUS
+    &kp TAB   &kp Q     &kp W       &kp E    &kp R      &kp T                             &kp Y     &kp U     &kp I       &kp O     &kp P           &kp LBKT
+    &kp LCTRL &kp A     &kp S       &kp D    &kp F      &kp G                             &kp H     &kp J     &kp K       &kp L     &kp SEMI        &kp SQT
+    &kp LCMD  &kp Z     &kp X       &kp C    &kp V      &kp B       &trans    &kp BSPC   &kp N     &kp M     &kp COMMA   &kp DOT   &kp UP          &kp DOWN
+                        &kp LALT    &kp LCMD &mo 1      &kp LSHFT   &kp ENTER &kp SPACE  &mo 2     &kp RET   &kp LEFT  &kp RIGHT
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		};
+
+		lower_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |       |     |        |   #     |  `     |  [          |                   |  F6        |  F7   |  F8              |   F9        |  F10      |  ]        |
+// |       | @   |        |         | rename |             |                   |            |       | chrome dev tools | format code | = et +    | - et _    |
+// |       |     |        |         |  find  | multi caret |                   |            |       |                  |  "|"        | x meth    | $ et *    |
+// |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
+//                        |         |        |             |        |  |       |            | HOME  |  END             |
+			bindings = <
+&trans      &trans     &trans          &CST_HASH  &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8          &kp F9           &kp F10          &macro_cro_close
+&bt BT_NXT  &CST_AT    &trans          &trans     &shift_f6       &trans                                   &trans      &trans           &alt_cmd_i      &alt_cmd_l       &kp SLASH        &kp EQUAL
+&trans      &trans     &trans          &trans     &ctrl_shift_f   &cmd_ctrl_g                              &trans      &trans           &trans          &macro_pipe      &alt_cmd_m       &kp RBKT
+&trans      &trans     &alt_cmd_m      &alt_cmd_c &alt_cmd_v      &alt_cmd_f       &trans        &kp DEL   &cmd_n      &trans           &trans          &macro_backslash &shift_alt_up    &shift_alt_down
+                       &rgb_ug RGB_TOG &trans     &bt BT_CLR      &trans           &trans        &trans    &trans      &kp HOME         &kp END         &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		};
+
+        top_layer {
+        // ------------------------------------------------------------------------------------------------------------
+        // |       |F1   |  F2 |  F3  |  F4  |  F5   |                   |      |       |       |      |       |       |
+        // |  >    |     |     |      |      |       |                   |      |       |       |      |       |       |
+        // |       |     |     |      |      |       |                   |      |       |       |      |       |       |
+        // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
+        //                     |      |      |       |        |  |       |      |       |       |
+                    bindings = <
+        &trans     &kp F1     &kp F2     &kp F3   &kp F4          &kp F5                              &trans      &trans           &trans          &trans    &trans          &trans
+        &macro_gt  &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans           &trans
+        &trans     &trans     &trans     &trans   &trans          &trans                              &trans      &trans           &trans          &trans    &trans           &trans
+        &trans     &trans     &trans     &trans   &trans          &trans    &trans         &macro_lt  &trans      &trans           &trans          &trans    &trans           &trans
+                              &trans     &trans   &trans          &trans    &trans         &bt BT_NXT &trans      &bt BT_CLR       &trans.         &trans
+                    >;
+
+                    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+
+	};
 };
