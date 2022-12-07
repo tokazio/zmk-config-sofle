@@ -308,9 +308,9 @@
 			bindings = <
 &trans               &trans     &trans          &CST_HASH           &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &macro_cro_close
 &bt BT_NXT           &CST_AT    &trans          &trans              &shift_f6       &trans                                  &trans      &kp UP           &alt_cmd_i       &alt_cmd_l       &kp SLASH        &kp EQUAL
-&rgb_ug RGB_EFR      &trans     &trans          &trans              &ctrl_shift_f   &cmd_ctrl_g                             &kp LEFT    &kp DOWN         &kp RIGHT        &macro_pipe      &alt_cmd_m       &kp RBKT
-&rgb_ug RGB_TOG      &trans     &alt_cmd_m      &alt_cmd_c          &alt_cmd_v      &alt_cmd_f       &trans        &trans   &cmd_n      &trans           &trans           &macro_backslash &shift_alt_up    &shift_alt_down
-                                &bt BT_CLR      &macro_cro_open     &trans          &trans           &kp HOME      &kp END  &trans      &kp DEL          &macro_cro_close &trans         
+&trans               &trans     &trans          &trans              &ctrl_shift_f   &cmd_ctrl_g                             &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE2        &alt_cmd_m       &kp RBKT
+&rgb_ug RGB_TOG      &trans     &alt_cmd_m      &alt_cmd_c          &alt_cmd_v      &alt_cmd_f       &trans        &trans   &cmd_n      &trans           &trans           &kp BACKSLASH    &trans           &shift_alt_down
+                                &bt BT_CLR      &trans              &trans          &trans           &kp HOME      &kp END  &trans      &kp DEL          &trans           &shift_alt_up         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -328,7 +328,7 @@
         &trans                 &trans          &trans          &trans          &trans          &trans                                     &trans      &trans           &trans          &trans    &trans          &trans
         &trans                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &trans      &trans           &trans          &trans    &trans          &trans
         &trans                 &trans          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &trans    &trans     &trans      &trans           &trans          &trans    &trans          &trans
-                               &trans          &trans          &macro_lt       &trans          &trans                &trans    &trans     &trans      &macro_gt        &trans          &trans
+                               &trans          &trans          &trans          &trans          &trans                &trans    &trans     &trans      &trans           &trans          &trans
                     >;
 
                     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
