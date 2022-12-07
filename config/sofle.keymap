@@ -308,7 +308,7 @@
 			bindings = <
 &trans               &trans     &trans          &CST_HASH           &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &macro_cro_close
 &bt BT_NXT           &CST_AT    &trans          &trans              &shift_f6       &trans                                  &trans      &kp UP           &alt_cmd_i       &alt_cmd_l       &kp SLASH        &kp EQUAL
-&trans               &trans     &trans          &trans              &ctrl_shift_f   &cmd_ctrl_g                             &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE2        &alt_cmd_m       &kp RBKT
+&trans               &trans     &trans          &trans              &ctrl_shift_f   &cmd_ctrl_g                             &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE        &alt_cmd_m       &kp RBKT
 &rgb_ug RGB_TOG      &trans     &alt_cmd_m      &alt_cmd_c          &alt_cmd_v      &alt_cmd_f       &trans        &trans   &cmd_n      &trans           &trans           &kp BACKSLASH    &trans           &shift_alt_down
                                 &bt BT_CLR      &trans              &trans          &trans           &kp HOME      &kp END  &trans      &kp DEL          &trans           &shift_alt_up         
 			>;
