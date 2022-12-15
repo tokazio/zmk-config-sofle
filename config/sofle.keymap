@@ -185,7 +185,7 @@
 // |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
 //               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
-&none                &none      &none           &CST_HASH           &kp BACKSLASH   &none.                                  &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &kp LA(BSPC)
+&none                &none      &none           &none               &kp none        &none                                   &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &kp LA(BSPC)
 &bt BT_NXT           &none      &none           &none               &kp LS(F6)      &none                                   &none       &kp UP           &kp LA(LCMD(I))  &kp LA(LCMD(L))  &none            &none
 &none                &none      &none           &none               &kp LC(LS(F))   &kp LC(LCMD(G))                         &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &kp LA(LCMD(M))  &none
 &rgb_ug RGB_TOG      &none      &LA(LCMD(M))    &LA(LCMD(C))        &kp LA(LCMD(V)) &kp LA(LCMD(F))     &none      &none    &kp LCMD(N) &none            &none            &none            &BACKSLASH       &none
