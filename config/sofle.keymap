@@ -233,11 +233,11 @@
         // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
         //               |     |      |      |       |        |  |       |      |       |       |      |
                     bindings = <
-        &none                 &none           &none           &kp LS(N3)      &none           &none                                      &none      &kp LS(N7)       &none           &none     &none           &trans
-        &none                 &none           &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none           &none                                      &none      &trans           &trans          &trans    &trans          &trans
-        &none                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &none      &trans           &trans          &trans    &trans          &trans
-        &none                 &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &trans           &trans          &trans    &trans          &trans
-                              &none           &none           &none           &none           &none                 &none    &none       &none      &trans           &trans          &trans
+        &none                 &none           &none           &kp LS(N3)      &none           &none                                      &none      &kp LS(N7)       &none           &none     &none           &none
+        &none                 &a_grv          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none           &none                                      &none      &u_grvs          &none           &none     &none           &none
+        &none                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &none      &none            &none           &none     &none           &none
+        &none                 &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &none            &none           &none     &none           &none
+                              &none           &none           &none           &none           &none                 &none    &none       &none      &none            &none           &none
                     >;
 
                     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
