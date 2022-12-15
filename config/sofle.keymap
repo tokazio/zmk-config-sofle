@@ -186,9 +186,9 @@
 //               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
 &none                &none      &none           &none               &none           &none                                   &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &kp LA(BSPC)
-&bt BT_NXT           &none      &none           &none               &kp LS(F6)      &none                                   &none       &kp UP           &kp LA(LCMD(I))  &kp LA(LCMD(L))  &none            &none
-&none                &none      &none           &none               &kp LC(LS(F))   &kp LC(LCMD(G))                         &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &kp LA(LCMD(M))  &none
-&rgb_ug RGB_TOG      &none      &kp LA(LCMD(M)) &kp LA(LCMD(C))     &kp LA(LCMD(V)) &kp LA(LCMD(F))  &none         &none    &kp LCMD(N) &none            &none            &none            &kp BACKSLASH    &none
+&bt BT_NXT           &none      &none           &none               &kp LS(F6)      &none                                   &none       &kp UP           &kp LA(LG(I))    &kp LA(LG(L))    &none            &none
+&none                &none      &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                           &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &kp LA(LG(M))    &none
+&rgb_ug RGB_TOG      &none      &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none    &kp LG(N)   &none            &none            &none            &kp BACKSLASH    &none
                                 &bt BT_CLR      &none               &none           &none            &kp HOME      &kp END  &none       &none            &none            &none         
 			>;
 
