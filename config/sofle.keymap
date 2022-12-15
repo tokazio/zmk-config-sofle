@@ -55,6 +55,16 @@
                 , <&macro_tap &kp E>
                 ;
         };
+	
+	u_grv: u_grv {
+            label = "u grave";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(GRAVE)>
+                , <&macro_tap &kp U>
+                ;
+        };
 
         macro_gt: macro_gt {
             label = "macro_gt";
@@ -206,8 +216,8 @@
 //               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
 &none                &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp LC(D)
-&bt BT_NXT           &a_grv             &none           &none               &kp LS(F6)      &none                                         &none       &kp UP           &kp LA(LG(I))    &kp LA(LG(L))    &none            &none
-&none                &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &kp LA(LG(M))    &kp GRAVE
+&bt BT_NXT           &a_grv             &none           &none               &kp LS(F6)      &none                                         &kp UP      &kp u_grv        &kp LA(LG(I))    &kp LA(LG(L))    &none            &none
+&none                &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
 &rgb_ug RGB_TOG      &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &none            &none            &kp BACKSLASH    &kp TILDE
                                         &bt BT_CLR      &none               &none           &none            &kp LG(LEFT)  &kp LG(RIGHT)  &none       &none            &none            &none         
 			>;
@@ -224,9 +234,9 @@
         //               |     |      |      |       |        |  |       |      |       |       |      |
                     bindings = <
         &none                 &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                     &kp F6     &kp F7           &kp F8          &kp F9    &kp F10         &trans
-        &none                 &none           &none           &none           &none           &none                                      &none      &trans           &trans          &trans    &trans          &trans
+        &none                 &none           &rgb_ug RGB_HUD &rgb_ug RGB_HUP           &none           &none                                      &none      &trans           &trans          &trans    &trans          &trans
         &none                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &none      &trans           &trans          &trans    &trans          &trans
-        &none                 &none           &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &trans           &trans          &trans    &trans          &trans
+        &none                 &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &trans           &trans          &trans    &trans          &trans
                               &none           &none           &none           &none           &none                 &none    &none       &none      &trans           &trans          &trans
                     >;
 
