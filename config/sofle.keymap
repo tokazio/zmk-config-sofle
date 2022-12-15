@@ -167,7 +167,7 @@
 // |  CMD  |  Z       |  X      |  C       |  V       |  B       |       | |       |  N       | , ou ?    |  ; ou .   | : ou /   |           |           |
 //                    | ALT     | {        | LOWER    |  SHIFT   | ENTER | | SPACE | RAISE    | BCSPC     | }         |          |
 			bindings = <
-    &kp ESC   &kp LS(N1) &kp LS(N2)  &kp e_aig         &kp LS(N4) &kp LS(N5)                        &kp LS(N6) &kp LS(N7) &kp LS(N8)        &kp LS(N9)    &kp LS(N0)      &kp BSPC
+    &kp ESC   &kp LS(N1) &kp LS(N2)  &e_aig            &kp LS(N4) &kp LS(N5)                        &kp LS(N6) &kp LS(N7) &kp LS(N8)        &kp LS(N9)    &kp LS(N0)      &kp BSPC
     &kp TAB   &kp A      &kp Z       &kp E             &kp R      &kp T                             &kp Y      &kp U      &kp I             &kp O         &kp P           &kp EQUAL
     &kp LCTRL &kp Q      &kp S       &kp D             &kp F      &kp G                             &kp H      &kp J      &kp K             &kp L         &kp M           &kp SQT
     &kp LCMD  &kp W      &kp X       &kp C             &kp V      &kp B       &none     &none       &kp N      &kp SEMI   &kp COMMA         &kp DOT       &kp SLASH       &kp RIGHT
