@@ -31,8 +31,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LALT &kp E>
+                = <&macro_tap &kp LA(E)>
                 , <&macro_tap &kp E>
+                ;
+        };
+	
+	a_grv: a_grv {
+            label = "a grave";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(I)>
+                , <&macro_tap &kp A>
                 ;
         };
 
@@ -185,11 +195,11 @@
 // |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
 //               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
-&none                &kp N1     &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp LC(D)
-&bt BT_NXT           &none      &none           &none               &kp LS(F6)      &none                                         &none       &kp UP           &kp LA(LG(I))    &kp LA(LG(L))    &none            &none
-&none                &none      &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &kp LA(LG(M))    &none
-&rgb_ug RGB_TOG      &none      &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &none            &none            &kp BACKSLASH    &none
-                                &bt BT_CLR      &none               &none           &none            &kp LG(LEFT)  &kp LG(RIGHT)  &none       &none            &none            &none         
+&none                &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp LC(D)
+&bt BT_NXT           &kp a_grv          &none           &none               &kp LS(F6)      &none                                         &none       &kp UP           &kp LA(LG(I))    &kp LA(LG(L))    &none            &none
+&none                &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &kp LA(LG(M))    &none
+&rgb_ug RGB_TOG      &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &none            &none            &kp BACKSLASH    &none
+                                        &bt BT_CLR      &none               &none           &none            &kp LG(LEFT)  &kp LG(RIGHT)  &none       &none            &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
