@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/rgb.h>
 
+
 / {
 
     chosen {
@@ -25,135 +26,13 @@
     
     macros {
 
-        ctrl_shift_f: ctrl_shift_f {
-            label = "IJ find in files";
+        e_aig: e_aig {
+            label = "e aigu";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT &kp LCTRL>
+                = <&macro_tap &kp LALT &kp E>
                 , <&macro_tap &kp F>
-                , <&macro_release &kp F &kp LSHFT &kp LCTRL>
-                ;
-        };
-
-        cmd_n: cmd_n {
-            label = "IJ open class";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp N>
-                , <&macro_release &kp LCMD &kp N>
-                ;
-        };
-
-        shift_alt_up: shift_alt_up {
-            label = "IJ move up";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT &kp LALT>
-                , <&macro_tap &kp UP>
-                , <&macro_release &kp LSHFT &kp LALT>
-                ;
-        };
-
-        shift_alt_down: shift_alt_down {
-            label = "IJ move down";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT &kp LALT>
-                , <&macro_tap &kp DOWN>
-                , <&macro_release &kp LSHFT &kp LALT>
-                ;
-        };
-
-        shift_f6: shift_f6 {
-            label = "IJ rename";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp F6>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-
-        alt_cmd_m: alt_cmd_m {
-            label = "IJ extract method";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LALT>
-                , <&macro_tap &kp M>
-                , <&macro_release &kp LCMD &kp LALT>
-                ;
-        };
-	
-	alt_cmd_l: alt_cmd_l {
-            label = "IJ reformat code";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LALT>
-                , <&macro_tap &kp L>
-                , <&macro_release &kp LCMD &kp LALT>
-                ;
-        };
-
-        alt_cmd_v: alt_cmd_v {
-            label = "IJ extract variable";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LALT>
-                , <&macro_tap &kp V>
-                , <&macro_release &kp LCMD &kp LALT>
-                ;
-        };
-
-        alt_cmd_f: alt_cmd_f {
-            label = "IJ extract field";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LALT>
-                , <&macro_tap &kp F>
-                , <&macro_release &kp LCMD &kp LALT>
-                ;
-        };
-
-        alt_cmd_c: alt_cmd_c {
-            label = "IJ extract const";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LALT>
-                , <&macro_tap &kp C>
-                , <&macro_release &kp LCMD &kp LALT>
-                ;
-        };
-	
-	alt_cmd_i: alt_cmd_i {
-            label = "Chrome dev tools";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LALT>
-                , <&macro_tap &kp I>
-                , <&macro_release &kp LCMD &kp LALT>
-                ;
-        };
-	
-	cmd_ctrl_g: cmd_ctrl_g {
-            label = "IJ multi caret";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD &kp LCTRL>
-                , <&macro_tap &kp G>
-                , <&macro_release &kp LCMD &kp LCTRL>
                 ;
         };
 
@@ -288,11 +167,11 @@
 // |  CMD  |  Z       |  X      |  C       |  V       |  B       |       | |       |  N       | , ou ?    |  ; ou .   | : ou /   |           |           |
 //                    | ALT     | {        | LOWER    |  SHIFT   | ENTER | | SPACE | RAISE    | BCSPC     | }         |          |
 			bindings = <
-    &kp ESC   &kp N1    &kp N2      &kp N3            &kp N4     &kp N5                            &kp N6    &kp N7    &kp N8            &kp N9    &kp N0          &kp MINUS
-    &kp TAB   &kp A     &kp Z       &kp E             &kp R      &kp T                             &kp Y     &kp U     &kp I             &kp O     &kp P           &kp EQUAL
-    &kp LCTRL &kp Q     &kp S       &kp D             &kp F      &kp G                             &kp H     &kp J     &kp K             &kp L     &kp SEMI        &kp SQT
-    &kp LCMD  &kp W     &kp X       &kp C             &kp V      &kp B       &trans    &trans      &kp N     &kp M     &kp COMMA         &kp DOT   &kp SLASH       &kp RIGHT
-                        &kp LALT    &kp LBKT          &mo 1      &kp LSHFT   &kp ENTER &kp SPACE   &mo 2     &kp BSPC  &kp RBKT          &kp LEFT
+    &kp ESC   &kp LS(N1) &kp LS(N2)  &kp e_aig         &kp LS(N4) &kp LS(N5)                        &kp LS(N6) &kp LS(N7) &kp LS(N8)        &kp LS(N9)    &kp LS(N0)      &kp BSPC
+    &kp TAB   &kp A      &kp Z       &kp E             &kp R      &kp T                             &kp Y      &kp U      &kp I             &kp O         &kp P           &kp EQUAL
+    &kp LCTRL &kp Q      &kp S       &kp D             &kp F      &kp G                             &kp H      &kp J      &kp K             &kp L         &kp M           &kp SQT
+    &kp LCMD  &kp W      &kp X       &kp C             &kp V      &kp B       &none     &none       &kp N      &kp SEMI   &kp COMMA         &kp DOT       &kp SLASH       &kp RIGHT
+                         &kp LALT    &kp LBKT          &mo 1      &kp LSHFT   &kp ENTER &kp SPACE   &mo 2      &kp MINUS  &kp RBKT          &kp LEFT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -306,11 +185,11 @@
 // |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
 //               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
-&trans               &trans     &trans          &CST_HASH           &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &macro_cro_close
-&bt BT_NXT           &CST_AT    &trans          &trans              &shift_f6       &trans                                  &trans      &kp UP           &alt_cmd_i       &alt_cmd_l       &kp SLASH        &kp EQUAL
-&trans               &trans     &trans          &trans              &ctrl_shift_f   &cmd_ctrl_g                             &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE        &alt_cmd_m       &kp RBKT
-&rgb_ug RGB_TOG      &trans     &alt_cmd_m      &alt_cmd_c          &alt_cmd_v      &alt_cmd_f       &trans        &trans   &cmd_n      &trans           &trans           &kp BACKSLASH    &trans           &shift_alt_down
-                                &bt BT_CLR      &trans              &trans          &trans           &kp HOME      &kp END  &trans      &kp DEL          &trans           &shift_alt_up         
+&none                &none      &none           &CST_HASH           &kp BACKSLASH   &macro_cro_open                         &kp F6      &kp F7           &kp F8           &kp F9           &kp F10          &kp LA(BSPC)
+&bt BT_NXT           &CST_AT    &none           &none               &LS(F6)         &none                                   &none       &kp UP           &LA(LCMD(I))     &LA(LCMD(L))     &none            &none
+&none                &none      &none           &none               &LC(LS(F))      &LC(LCMD(G))                            &kp LEFT    &kp DOWN         &kp RIGHT        &kp PIPE         &LA(LCMD(M))     &none
+&rgb_ug RGB_TOG      &none      &LA(LCMD(M))    &LA(LCMD(C))        &LA(LCMD(V))    &LA(LCMD(F))     &none         &none    &LCMD(N)    &none            &none            &none            &BACKSLASH       &none
+                                &bt BT_CLR      &none               &none           &none            &kp HOME      &kp END  &none       &none            &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -324,11 +203,11 @@
         // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
         //               |     |      |      |       |        |  |       |      |       |       |      |
                     bindings = <
-        &trans                 &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                     &trans      &trans           &trans          &trans    &trans          &trans
-        &trans                 &trans          &trans          &trans          &trans          &trans                                     &trans      &trans           &trans          &trans    &trans          &trans
-        &trans                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &trans      &trans           &trans          &trans    &trans          &trans
-        &trans                 &trans          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &trans    &trans     &trans      &trans           &trans          &trans    &trans          &trans
-                               &trans          &trans          &trans          &trans          &trans                &trans    &trans     &trans      &trans           &trans          &trans
+        &none                 &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                     &none      &trans           &trans          &trans    &trans          &trans
+        &none                 &none           &none           &none           &none           &none                                      &none      &trans           &trans          &trans    &trans          &trans
+        &none                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &none      &trans           &trans          &trans    &trans          &trans
+        &none                 &none           &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &trans           &trans          &trans    &trans          &trans
+                              &none           &none           &none           &none           &none                 &none    &none       &none      &trans           &trans          &trans
                     >;
 
                     sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
