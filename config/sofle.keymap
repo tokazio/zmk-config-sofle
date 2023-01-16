@@ -166,7 +166,6 @@
                          &kp LALT    &kp LBKT          &layer_a   &kp LSHFT   &kp ENTER &kp SPACE   &layer_b   &kp MINUS  &kp RBKT          &kp LEFT
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 
 		lower_layer {
@@ -179,9 +178,9 @@
 			bindings = <
 &none                &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp LC(D)
 &bt BT_NXT           &kp LS(N2)         &none           &none               &kp LS(F6)      &none                                         &kp UP      &u_grv           &kp LA(LG(I))    &kp LA(LG(L))    &none            &trans
-&none                &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
-&rgb_ug RGB_TOG      &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
-                                        &bt BT_CLR      &none               &none           &none            &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans            &none            &none         
+&trans               &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
+&trans               &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
+                                        &trans          &bt BT_CLR          &none           &trans           &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans            &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -195,27 +194,14 @@
         // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
         //               |     |      |      |       |        |  |       |      |       |       |      |
                     bindings = <
-        &none                 &none           &none           &kp LS(N3)      &none           &none                                      &none      &kp LS(N7)       &none           &none     &none           &none
+        &none                 &none           &none           &kp LS(N3)      &none           &none                                      &none      &kp LS(N7)       &none           &none     &none           &kp DELETE
         &none                 &a_grv          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none           &none                                      &kp UP     &u_grv           &none           &none     &none           &none
-        &none                 &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &kp DOWN   &none            &none           &none     &none           &none
-        &none                 &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &none            &none           &none     &none           &none
-                              &none           &none           &none           &none           &none                 &none    &none       &none      &none            &none           &none
+        &trans                &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &kp DOWN   &none            &none           &none     &none           &none
+        &trans                &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &none            &none           &none     &none           &none
+                              &trans          &none           &none           &none           &trans                &none    &none       &none      &none            &none           &none
                     >;
 
-                    sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
-		
-		 code_layer {
-			bindings = <
-    &kp ESC   &kp LS(N1) &kp LS(N2)  &kp LS(N3)        &kp LS(N4) &kp LS(N5)                        &kp LS(N6) &kp LS(N7) &kp LS(N8)        &kp LS(N9)    &kp LS(N0)      &kp BSPC
-    &kp TAB   &kp A      &kp Z       &kp E             &kp R      &kp T                             &kp Y      &kp U      &kp I             &kp O         &kp P           &kp EQUAL
-    &kp LCTRL &kp Q      &kp S       &kp D             &kp F      &kp G                             &kp H      &kp J      &kp K             &kp L         &kp M           &kp SQT
-    &kp LCMD  &kp W      &kp X       &kp C             &kp V      &kp B       &none     &none       &kp N      &kp SEMI   &kp COMMA         &kp DOT       &kp SLASH       &kp RIGHT
-                         &kp LALT    &kp LBKT          &tog 3     &kp LSHFT   &kp ENTER &kp SPACE   &tog 3     &kp MINUS  &kp RBKT          &kp LEFT
-			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
 
 
 
