@@ -34,10 +34,10 @@
 	    tap-ms = <0>;
 	    bindings
 		= <&macro_press &kp LSHFT>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(35,100,40)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(35,100,10)>
 		, <&macro_pause_for_release>
 		, <&macro_release &kp LSHFT>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,10)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,2)>
 		;
 	};
     
@@ -50,10 +50,10 @@
 	    tap-ms = <0>;
 	    bindings
 		= <&macro_press &mo 1>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,40)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,10)>
 		, <&macro_pause_for_release>
 		, <&macro_release &mo 1>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,10)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,2)>
 		;
 	};
 	
@@ -65,10 +65,10 @@
 	    tap-ms = <0>;
 	    bindings
 		= <&macro_press &mo 2>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(175,100,40)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(175,100,10)>
 		, <&macro_pause_for_release>
 		, <&macro_release &mo 2>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,10)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,2)>
 		;
 	};
 
