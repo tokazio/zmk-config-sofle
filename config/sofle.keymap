@@ -195,7 +195,7 @@
 &bt BT_NXT           &kp LS(N2)         &none           &none               &kp LS(F6)      &none                                         &kp UP      &u_grv           &kp LA(LG(I))    &kp LA(LG(L))    &none            &trans
 &trans               &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
 &trans               &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
-                                        &trans          &bt BT_CLR          &none           &trans           &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans            &none            &none         
+                                        &trans          &bt BT_CLR          &none           &trans           &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans           &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -209,11 +209,11 @@
         // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
         //               |     |      |      |       |        |  |       |      |       |       |      |
                     bindings = <
-        &none                 &none           &none           &kp LS(N3)      &none           &none                                      &none      &kp LS(N7)       &none           &none     &none           &kp DELETE
-        &none                 &a_grv          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none           &none                                      &kp UP     &u_grv           &none           &none     &none           &none
-        &trans                &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &kp DOWN   &none            &none           &none     &none           &none
-        &trans                &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none      &none            &none           &none     &none           &none
-                              &trans          &none           &none           &none           &trans                &none    &none       &none      &none            &none           &none
+        &none                 &none           &none           &kp LS(N3)      &none           &none                                      &none              &kp LS(N7)       &none           &none     &none           &kp DELETE
+        &none                 &a_grv          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none           &none                                      &kp LG(LS(UP))     &u_grv           &none           &none     &none           &none
+        &trans                &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &kp LG(LS(DOWN)    &none            &none           &none     &none           &none
+        &trans                &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none              &none            &none           &none     &none           &none
+                              &trans          &none           &none           &none           &trans                &none    &none       &none              &none            &none           &none
                     >;
 
                 };
