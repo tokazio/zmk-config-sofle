@@ -34,7 +34,7 @@
 	    tap-ms = <0>;
 	    bindings
 		= <&macro_press &kp LSHFT>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(35,100,10)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(35,100,4)>
 		, <&macro_pause_for_release>
 		, <&macro_release &kp LSHFT>
 		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,1)>
@@ -50,7 +50,7 @@
 	    tap-ms = <0>;
 	    bindings
 		= <&macro_press &mo 1>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,10)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(300,100,4)>
 		, <&macro_pause_for_release>
 		, <&macro_release &mo 1>
 		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,1)>
@@ -65,9 +65,24 @@
 	    tap-ms = <0>;
 	    bindings
 		= <&macro_press &mo 2>
-		, <&macro_tap &rgb_ug RGB_COLOR_HSB(175,100,10)>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(175,100,4)>
 		, <&macro_pause_for_release>
 		, <&macro_release &mo 2>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,1)>
+		;
+	};
+	
+	layer_c: layer_c {
+	    label = "layer c";
+	    compatible = "zmk,behavior-macro";
+	    #binding-cells = <0>;
+	    wait-ms = <0>;
+	    tap-ms = <0>;
+	    bindings
+		= <&macro_press &sl 3>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(0,100,4)>
+		, <&macro_pause_for_release>
+		, <&macro_release &sl 3>
 		, <&macro_tap &rgb_ug RGB_COLOR_HSB(240,0,1)>
 		;
 	};
@@ -90,6 +105,17 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LA(GRAVE)>
+                , <&macro_tap &kp A>
+                ;
+        };
+	
+	a_circ: a_circ {
+            label = "a circ";
+	    tap-ms = <50>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(I)>
                 , <&macro_tap &kp A>
                 ;
         };
@@ -191,11 +217,11 @@
 // |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
 //               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
-&none                &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp LC(D)
+&none                &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp DELETE
 &bt BT_NXT           &kp LS(N2)         &none           &none               &kp LS(F6)      &none                                         &kp UP      &u_grv           &kp LA(LG(I))    &kp LA(LG(L))    &none            &trans
 &trans               &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
 &trans               &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
-                                        &trans          &bt BT_CLR          &none           &trans           &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans           &none            &none         
+                                        &trans          &bt BT_CLR          &none           &layer_c         &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans           &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -213,6 +239,23 @@
         &none                 &a_grv          &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none           &none                                      &kp LG(LS(UP))      &u_grv           &none           &none     &none           &none
         &trans                &rgb_ug RGB_TOG &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_BRD &rgb_ug RGB_BRI                            &kp LG(LS(DOWN))    &none            &none           &none     &none           &none
         &trans                &none           &none           &kp LA(C)       &rgb_ug RGB_SAD &rgb_ug RGB_SAI       &none    &none       &none               &none            &none           &none     &none           &none
+                              &trans          &none           &none           &none           &trans                &none    &none       &none               &none            &none           &none
+                    >;
+
+                };
+		
+		toptop_layer {
+        // ------------------------------------------------------------------------------------------------------------
+        // |       |F1   |  F2 |  F3  |  F4  |  F5   |                   |      |       |       |      |       |       |
+        // |  >    |     |     |      |      |       |                   |      |       |       |      |       |       |
+        // |       |     |     |      |      |       |                   |      |       |       |      |       |       |
+        // |       |     |     |      |      |       |        |  |   <   |      |       |       |      |       |       |
+        //               |     |      |      |       |        |  |       |      |       |       |      |
+                    bindings = <
+        &none                 &none           &none           &none           &none           &none                                      &none               &none            &none           &none     &none           &none
+        &none                 &a_circ         &none           &none           &none           &none                                      &none               &none            &none           &none     &none           &none
+        &trans                &none           &none           &none           &none           &none                                      &none               &none            &none           &none     &none           &none
+        &trans                &none           &none           &none           &none           &none                 &none    &none       &none               &none            &none           &none     &none           &none
                               &trans          &none           &none           &none           &trans                &none    &none       &none               &none            &none           &none
                     >;
 
