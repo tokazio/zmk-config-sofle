@@ -265,7 +265,7 @@
 &bt BT_NXT           &kp LS(N2)         &none           &none               &kp LS(F6)      &none                                         &kp UP      &u_grv           &kp LA(LG(I))    &kp LA(LG(L))    &none            &trans
 &trans               &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
 &trans               &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
-                                        &trans          &bt BT_CLR          &none           &tans            &kp LG(LEFT)  &kp LG(RIGHT)  &layer_c    &trans           &none            &none         
+                                        &trans          &bt BT_CLR          &none           &trans            &kp LG(LEFT)  &kp LG(RIGHT)  &layer_c    &trans           &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
