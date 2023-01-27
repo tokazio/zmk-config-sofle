@@ -131,6 +131,17 @@
                 ;
         };
 	
+	e_circ: e_circ {
+            label = "e circ";
+	    tap-ms = <50>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(I)>
+                , <&macro_tap &kp E>
+                ;
+        };
+	
 	u_grv: u_grv {
             label = "u grave";
 	    tap-ms = <50>;
@@ -139,6 +150,39 @@
             bindings
                 = <&macro_tap &kp LA(GRAVE)>
                 , <&macro_tap &kp U>
+                ;
+        };
+	
+	u_circ: u_circ {
+            label = "u circ";
+	    tap-ms = <50>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(I)>
+                , <&macro_tap &kp U>
+                ;
+        };
+	
+	o_circ: o_circ {
+            label = "o circ";
+	    tap-ms = <50>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(I)>
+                , <&macro_tap &kp O>
+                ;
+        };
+	
+	i_circ: i_circ {
+            label = "i circ";
+	    tap-ms = <50>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LA(I)>
+                , <&macro_tap &kp I>
                 ;
         };
 
@@ -221,7 +265,7 @@
 &bt BT_NXT           &kp LS(N2)         &none           &none               &kp LS(F6)      &none                                         &kp UP      &u_grv           &kp LA(LG(I))    &kp LA(LG(L))    &none            &trans
 &trans               &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
 &trans               &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
-                                        &trans          &bt BT_CLR          &none           &layer_c         &kp LG(LEFT)  &kp LG(RIGHT)  &none       &trans           &none            &none         
+                                        &trans          &bt BT_CLR          &none           &tans            &kp LG(LEFT)  &kp LG(RIGHT)  &layer_c    &trans           &none            &none         
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -253,7 +297,7 @@
         //               |     |      |      |       |        |  |       |      |       |       |      |
                     bindings = <
         &none                 &none           &none           &none           &none           &none                                      &none               &none            &none           &none     &none           &none
-        &none                 &a_circ         &none           &none           &none           &none                                      &none               &none            &none           &none     &none           &none
+        &none                 &a_circ         &none           &e_circ         &none           &none                                      &none               &u_circ          &i_circ         &o_circ   &none           &none
         &trans                &none           &none           &none           &none           &none                                      &none               &none            &none           &none     &none           &none
         &trans                &none           &none           &none           &none           &none                 &none    &none       &none               &none            &none           &none     &none           &none
                               &trans          &none           &none           &none           &trans                &none    &none       &none               &none            &none           &none
