@@ -237,11 +237,11 @@
 
 		default_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  ESC  |  1 ou &  | 2 ou é  | 3 ou "   | 4 ou '   | 5 ou (   |                 | 6 ou §   | 7 ou é    | 8 ou !    | 9 ou ç   |  0 ou à   |   ) ou °  |
-// |  TAB  |  Q       |  W      |  E       |  R       |  T       |                 |  Y       |  U        |  I        |  O       |   P       |   ^ ou ¨  |
-// |  CTRL |  A       |  S      |  D       |  F       |  G       |                 |  H       |  J        |  K        |  L       |   M       |   ù ou %  |
-// |  CMD  |  Z       |  X      |  C       |  V       |  B       |       | |       |  N       | , ou ?    |  ; ou .   | : ou /   |           |           |
-//                    | ALT     | {        | LOWER    |  SHIFT   | ENTER | | SPACE | RAISE    | BCSPC     | }         |          |
+// |  ESC  |  1 ou !  | 2 ou é  | 3 ou #   | 4 ou $   | 5 ou %   |                 | 6 ou ^   | 7 ou é    | 8 ou *    | 9 ou (   |  0 ou )   | BACKSPACE |
+// |  TAB  |  A       |  Z      |  E       |  R       |  T       |                 |  Y       |  U        |  I        |  O       |   P       |   + ou =  |
+// |  CTRL |  Q       |  S      |  D       |  F       |  G       |                 |  H       |  J        |  K        |  L       |   M       |   ' ou "  |
+// |  CMD  |  W       |  X      |  C       |  V       |  B       |  L/R  | | U/D   |  N       | ; ou :    |  , ou <   | . ou >   |   / ou ?  |  RIGHT    |
+//                    | ALT     | [ ou {   | LOWER    |  SHIFT   | ENTER | | SPACE | UPPER    | - ou _    | }         |   LEFT   |
 			bindings = <
     &kp ESC   &kp LS(N1) &e_aig      &kp LS(N3)        &kp LS(N4) &kp LS(N5)                        &kp LS(N6) &e_grv     &kp LS(N8)        &kp LS(N9)    &kp LS(N0)      &kp BSPC
     &kp TAB   &kp A      &kp Z       &kp E             &kp R      &kp T                             &kp Y      &kp U      &kp I             &kp O         &kp P           &kp EQUAL
@@ -250,26 +250,26 @@
                          &kp LALT    &kp LBKT          &layer_a   &layer_s    &kp ENTER &kp SPACE   &layer_b   &kp MINUS  &kp RBKT          &kp LEFT
 			>;
 			
-			sensor-bindings = <&inc_dec_kp DOWN UP>;
+			sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp DOWN UP>;
 
 		};
 
 		lower_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |        |   #     |  `     |  [          |                   |  F6        |  F7   |  F8              |   F9        |  F10      |  ]        |
-// |       | @   |        |         | rename |             |                   |            |  UP   | chrome dev tools | format code | = et +    | - et _    |
-// |       |     |        |         |  find  | multi caret |                   | LEFT       | DOWN  |  RIGHT           |  "|"        | x meth    | $ et *    |
-// |       |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
-//               |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
+// | ESC    |  1  |   2    |   3     |  `     |  [          |                   |  F6        |  F7   |  F8              |   F9        |  F10      |  ]        |
+// | BT_NXT | @   |        |         | rename |             |                   |            |  UP   | chrome dev tools | format code | = et +    | - et _    |
+// |        |     |        |         |  find  | multi caret |                   | LEFT       | DOWN  |  RIGHT           |  "|"        | x meth    | $ et *    |
+// |        |     | x meth | x const | x var  | x field     |        |  | del   | open class |       |                  |  \          |   line up | line down |
+//                |        |    [    |        |             |        |  |       |            | ]     |            HOME  |  END        |
 			bindings = <
-&none                &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp DELETE
+&kp ESC              &kp N1             &kp N2          &kp N3              &kp N4          &kp N5                                        &kp N6      &kp N7           &kp N8           &kp N9           &kp N0           &kp DELETE
 &bt BT_NXT           &kp LS(N2)         &none           &none               &kp LS(F6)      &none                                         &kp UP      &u_grv           &kp LA(LG(I))    &kp LA(LG(L))    &none            &trans
 &trans               &none              &none           &none               &kp LC(LS(F))   &kp LC(LG(G))                                 &kp DOWN    &none            &none            &kp PIPE         &kp LA(LG(M))    &kp GRAVE
 &trans               &none              &kp LA(LG(M))   &kp LA(LG(C))       &kp LA(LG(V))   &kp LA(LG(F))    &none         &none          &kp LG(N)   &none            &trans           &trans           &kp BACKSLASH    &kp TILDE
                                         &trans          &bt BT_CLR          &none           &trans            &kp LG(LEFT)  &kp LG(RIGHT)  &layer_c    &trans           &none            &none         
 			>;
 
-			sensor-bindings = <&inc_dec_kp DEL BSPC>;
+			sensor-bindings = <&inc_dec_kp BSPC DEL &inc_dec_kp PG_UP PG_DN>;
 		};
 
         top_layer {
