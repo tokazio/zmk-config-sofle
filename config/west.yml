@@ -1,7 +1,7 @@
 manifest:
   remotes:
-    - name: zmk
-      url-base: https://github.com/tokazio
+    - name: zmkfirmware
+      url-base: https://github.com/esyo-net
   projects:
     - name: zmk
       remote: zmkfirmware
